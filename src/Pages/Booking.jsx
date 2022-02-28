@@ -5,19 +5,18 @@ import { Link } from "react-router-dom";
 import ResponsiveAppBar from "../Components/Navbar";
 
 export default function Booking() {
-  const [every, setEvery] = React.useState();
   const fetchdata = async () => {
-    var response = await axios.get("https://backendmoviebook.herokuapp.com/booked/get", {
+   await axios.get("https://backendmoviebook.herokuapp.com/booked/get", {
       headers: {
         "access-token": localStorage.getItem("token"),
       },
     });
-    setEvery(response.data);
+    // setEvery(response.data);
   };
   useEffect(() => {
     fetchdata();
   }, []);
-console.log("igonore this"+every)
+// console.log("igonore this"+every)
   return (
     <div className="Booking">
       <ResponsiveAppBar></ResponsiveAppBar>

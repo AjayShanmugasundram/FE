@@ -3,7 +3,7 @@
 .App{
   text-align: center;
   min-height: 100vh;
-}
+} 
 
 .green{
   color: green;
@@ -48,8 +48,4 @@ background: white;
 .blacktheme{
 background-color: black;
 }
-.opacity{
-  opacity: 0.8;
-}
-
 
