@@ -11,9 +11,8 @@ import "react-toastify/dist/ReactToastify.css";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import GoogleIcon from "@mui/icons-material/Google";
 import Bg from "../assests/1512217.jpg";
-import TwitterIcon from '@mui/icons-material/Twitter';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-
+import TwitterIcon from "@mui/icons-material/Twitter";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
 
 export default function SignIn() {
   const [login, setlogin] = React.useState({
@@ -49,9 +48,18 @@ export default function SignIn() {
       <div className="container-fluid">
         <div className="row">
           <div className="col-sm-12 col-md-8 col-lg-8">
-            <img src={Bg} className="img-fluid w-100 " style={{objectFit: "cover", objectPosition: "left",height:"114.5%"}} alt=""></img>
+            <img
+              src={Bg}
+              className="img-fluid w-100 "
+              style={{
+                objectFit: "cover",
+                objectPosition: "left",
+                height: "114.5%",
+              }}
+              alt=""
+            ></img>
           </div>
-         
+
           <div className="col-sm-12 col-md-4 col-lg-4">
             <Container className="colorofsignin" maxWidth="sm">
               <form
@@ -128,6 +136,7 @@ export default function SignIn() {
               </Link>
               <br></br>
               <hr className="my-4"></hr>
+              <a  href="https://plus.google.com/">
               <button
                 className="btn btn-lg btn-block btn-primary"
                 style={{ backgroundColor: " #dd4b39", border: "none" }}
@@ -138,9 +147,10 @@ export default function SignIn() {
                 </i>{" "}
                 <span className="fs-6">Sign in with google</span>
               </button>
+              </a>
               <br></br>
               <br></br>
-              <button
+             <a  href="https://www.facebook.com/"><button
                 className="btn btn-lg btn-block btn-primary mb-2"
                 style={{ backgroundColor: "#3b5998", border: "none" }}
                 type="submit"
@@ -150,36 +160,41 @@ export default function SignIn() {
                 </i>{" "}
                 <span className="fs-6">Sign in with facebook</span>
               </button>
+              </a>
               <br></br>
               <br></br>
             </Container>
           </div>
         </div>
-      </div> <br></br>
-          <br></br>
-         
-          <br></br>
-          <br></br>
+      </div>{" "}
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
       <div className="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 bg-dark">
         <div className="text-white mb-3 mb-md-0">
-          Copyright © 2020. All rights reserved.
+          Copyright © 2022. All rights reserved.
         </div>
-    
+        <Link to="/home/aboutus" style={{color:"white",textDecoration:"none" }}><b>About Us</b></Link>
+        <Link to="/home/contactus" style={{color:"white",textDecoration:"none" }}><b>Contact Us</b></Link>
+        <Link to="termsandconditons"style={{color:"white",textDecoration:"none" }}><b>Privacy</b></Link>
+
         <div>
-          <a href="#!" className="text-white me-4">
-           <FacebookIcon></FacebookIcon>
+          <a href="https://www.facebook.com/" className="text-white me-4">
+            <FacebookIcon></FacebookIcon>
           </a>
-          <a href="#!" className="text-white me-4">
-<TwitterIcon></TwitterIcon>          </a>
-          <a href="#!" className="text-white me-4">
-         <GoogleIcon></GoogleIcon>
+          <a href="https://twitter.com/" className="text-white me-4">
+            <TwitterIcon></TwitterIcon>{" "}
           </a>
-          <a href="#!" className="text-white">
-<LinkedInIcon></LinkedInIcon>         
- </a>
+          <a href="https://plus.google.com/" className="text-white me-4">
+            <GoogleIcon></GoogleIcon>
+          </a>
+          <a href="https://www.linkedin.com/home" className="text-white">
+            <LinkedInIcon></LinkedInIcon>
+          </a>
         </div>
       </div>
-      </div>
+    </div>
     /////
   );
 }

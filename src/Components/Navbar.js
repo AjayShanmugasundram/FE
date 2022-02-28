@@ -9,10 +9,9 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import Avatar from "@mui/material/Avatar";
 import MenuItem from "@mui/material/MenuItem";
-import  {  useNavigate }  from "react-router-dom";
+import  {  Link, useNavigate }  from "react-router-dom";
 import { Tooltip } from "@mui/material";
 
-const pages = ["Home", "AboutUs", "Privacy", "Contact"];
 
 
 const ResponsiveAppBar = () => {
@@ -39,6 +38,11 @@ await localStorage.removeItem("token")
 navigate("/")
   }
 
+  const Dashboard=async ()=>{
+ navigate("/home/Dashboard")
+  }
+
+
   return (
     <AppBar position="static" sx={{ bgcolor: 'text.disabled'  ,color:"white"}}>
       <Container maxWidth="xl">
@@ -51,7 +55,7 @@ navigate("/")
           >
             <Avatar
               alt="Remy Sharp"
-              src="https://c.tenor.com/Haml3kLurnQAAAAj/ticket-admission-tickets.gif"
+              src="https://dynamic.brandcrowd.com/preview/logodraft/7d27584c-ae74-4b56-8ec1-1dbab9cb2a1a/image/large.png"
               sx={{ width: 50, height: 50 }}
             />
                       </Typography>
@@ -85,11 +89,11 @@ navigate("/")
                 display: { xs: "block", md: "none" },
               }}
             >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+              
+                <MenuItem  onClick={handleCloseNavMenu}>
+                  <Typography textAlign="center">Hi</Typography>
                 </MenuItem>
-              ))}
+            
             </Menu>
           </Box>
           <Typography
@@ -125,11 +129,15 @@ navigate("/")
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
-             
+             <MenuItem  onClick={handleCloseUserMenu}>
+             <Link to="/home" fw="bolder" style={{color:"black"}} type="button">Home</Link>  
+                </MenuItem>
                 <MenuItem  onClick={handleCloseUserMenu}>
                   <Typography textAlign="center" fw="bolder" style={{color:"black"}} onClick={removetoken}>Log Out</Typography>
                 </MenuItem>
-            
+                <MenuItem  onClick={handleCloseUserMenu}>
+                <Typography textAlign="center" fw="bolder" style={{color:"black"}} onClick={Dashboard}>Dashboard</Typography>
+                </MenuItem>
             </Menu>
           </Box>
         </Toolbar> 

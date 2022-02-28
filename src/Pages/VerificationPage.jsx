@@ -10,13 +10,15 @@ import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
 const imagapi = "https://image.tmdb.org/t/p/w1280";
 
 export default function VerificationPage() {
-
+toast.configure()
   const [avatar, setAvatar] = useState("");
   const [avatar2, setAvatar2] = useState("");
   const [avatar3, setAvatar3] = useState("");
@@ -74,6 +76,7 @@ export default function VerificationPage() {
 
   /////////////----------------------------------->updating data from database<-----------------------------------------
   const updateProduct = async (email, name, ticket, bookings, time) => {
+    try{
     var response = await axios.put(
       `https://backendmoviebook.herokuapp.com/booked/update/${email}`,
       {
@@ -89,7 +92,10 @@ export default function VerificationPage() {
           "access-token": localStorage.getItem("token"),
         },
       }
-    );
+    )}
+    catch(err){
+toast.error("verification Failed")
+    }
     // navigate("");
     console.log(response);
     

@@ -15,7 +15,7 @@ export default function Booking() {
         "access-token": localStorage.getItem("token"),
       },
     })
-    toast.success("Succesfully Booked In DataBase")
+    toast.success("Succesfully Booked")
   }
     catch(err){
 console.error(err)
