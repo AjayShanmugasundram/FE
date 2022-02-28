@@ -3,14 +3,23 @@ import axios from "axios";
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import ResponsiveAppBar from "../Components/Navbar";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function Booking() {
+  toast.configure()
   const fetchdata = async () => {
+    try{
    await axios.get("https://backendmoviebook.herokuapp.com/booked/get", {
       headers: {
         "access-token": localStorage.getItem("token"),
       },
-    });
+    })
+    toast.success("Succesfully Booked In DataBase")
+  }
+    catch(err){
+console.error(err)
+    }
     // setEvery(response.data);
   };
   useEffect(() => {
